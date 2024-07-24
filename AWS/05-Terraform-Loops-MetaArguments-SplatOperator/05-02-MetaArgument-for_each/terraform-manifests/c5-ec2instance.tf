@@ -1,5 +1,6 @@
 # Availability Zones Datasource
 data "aws_availability_zones" "my_azones" {
+  exclude_names  =  ["us-east-1d","us-east-1e","us-east-1f"]
   filter {
     name   = "opt-in-status"
     values = ["opt-in-not-required"]

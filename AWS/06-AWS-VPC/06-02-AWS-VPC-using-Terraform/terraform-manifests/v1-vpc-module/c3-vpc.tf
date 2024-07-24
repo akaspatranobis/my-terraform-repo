@@ -1,8 +1,8 @@
 # Create VPC Terraform Module
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "2.78.0"  
-  # version = "~> 2.78"
+  version = "5.8.1"  
+ 
 
   # VPC Basic Details
   name = "vpc-dev"
@@ -21,7 +21,7 @@ module "vpc" {
 
   # NAT Gateways - Outbound Communication
   enable_nat_gateway = true
-  single_nat_gateway = true
+  single_nat_gateway = false
 
   # VPC DNS Parameters
   enable_dns_hostnames = true
@@ -40,7 +40,7 @@ module "vpc" {
   }
 
   tags = {
-    Owner = "kalyan"
+    Owner = "Akas"
     Environment = "dev"
   }
 
