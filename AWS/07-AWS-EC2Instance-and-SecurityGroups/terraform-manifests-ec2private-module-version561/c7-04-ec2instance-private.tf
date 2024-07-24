@@ -37,7 +37,7 @@ module "ec2_private" {
   instance_type          = var.instance_type
   key_name               = var.instance_keypair
   #monitoring             = true
-  vpc_security_group_ids = [module.private_sg.this_security_group_id]
+  vpc_security_group_ids = [module.private_sg.security_group_id]
   
   subnet_id =  element(module.vpc.private_subnets, tonumber(each.key))
 #   instance_count         = var.private_instance_count
