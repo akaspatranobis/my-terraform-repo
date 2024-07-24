@@ -28,7 +28,7 @@ module "ec2_private" {
 module "ec2_private" {
   depends_on = [ module.vpc ] # VERY VERY IMPORTANT else userdata webserver provisioning will fail
   source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "3.3.0"
+  version = "5.6.1"
    #for_each = toset([ module.vpc.private_subnets[0],module.vpc.private_subnets[1] ])
    for_each = toset(["0", "1"])
   # insert the 10 required variables here
