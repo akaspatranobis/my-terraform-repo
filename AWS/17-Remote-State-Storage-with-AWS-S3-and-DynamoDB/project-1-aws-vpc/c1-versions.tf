@@ -9,7 +9,7 @@ terraform {
   }
   # Adding Backend as S3 for Remote State Storage
   backend "s3" {
-    bucket = "terraform-on-aws-for-ec2"
+    bucket = "terraform-on-aws-for-ec2-ak"
     key    = "dev/project1-vpc/terraform.tfstate"
     region = "us-east-1" 
 
@@ -22,9 +22,5 @@ terraform {
 # Provider Block
 provider "aws" {
   region  = var.aws_region
-  profile = "default"
 }
-/*
-Note-1:  AWS Credentials Profile (profile = "default") configured on your local desktop terminal  
-$HOME/.aws/credentials
-*/
+
