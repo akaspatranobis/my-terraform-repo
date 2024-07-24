@@ -3,7 +3,7 @@
 resource "aws_eip" "bastion_eip" {
   depends_on = [ module.ec2_public, module.vpc ]
   instance = module.ec2_public.id[0]
-  vpc      = true
+  domain      = "vpc"
   tags = local.common_tags
 
 ## Local Exec Provisioner:  local-exec provisioner (Destroy-Time Provisioner - Triggered during deletion of Resource)
