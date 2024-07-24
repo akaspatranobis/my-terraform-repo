@@ -24,6 +24,7 @@ module "vpc" {
   # VPC DNS Parameters
   enable_dns_hostnames = true
   enable_dns_support   = true
+  enable_classiclink   = false
 
 
   tags = local.common_tags
